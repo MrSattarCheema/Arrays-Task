@@ -24,7 +24,7 @@ using namespace std;
 
 
 // 2nd Method 
-void ReverseArray(int arr[],int size){
+int * ReverseArray(int arr[],int size){
     int temp,n;
     n=size-1;
     for(int i=0;i<n;i++,n--){
@@ -32,9 +32,10 @@ void ReverseArray(int arr[],int size){
         arr[i]=arr[n];
         arr[n]=temp;
     }
+    return arr;
 }
 int main(){
-    int size;
+    int size,*ptr;
     cout<<"Enter size of Array";
     cin>>size;
     int arr[size];
@@ -42,9 +43,9 @@ int main(){
         cout<<"Enter element of Array for index "<<i<<endl;
         cin>>arr[i];
     }
-    ReverseArray(arr,size);
+    ptr=ReverseArray(arr,size);
     for (int i = 0; i < size; i++)
     {
-        cout << arr[i];
+        cout << ptr[i];
     }
 }
